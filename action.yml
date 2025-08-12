@@ -1,0 +1,30 @@
+name: "Deprecate Secrets Manager staging labels"
+description: "If a secret has > N staging labels, deprecate the oldest-labeled one"
+author: "Connor Smallman"
+runs:
+  using: "node20"
+  main: "index.js"
+
+inputs:
+  secret-id:
+    description: "The SecretId/ARN/name in AWS Secrets Manager"
+    required: true
+  aws-region:
+    description: "AWS region (e.g. us-east-1)"
+    required: true
+  threshold:
+    description: "Max allowed staging labels before trimming"
+    default: "18"
+    required: false
+  exclude-stages:
+    description: "Comma-separated stage names to never deprecate (default: AWSCURRENT,AWSPREVIOUS,AWSPENDING)"
+    default: "AWSCURRENT,AWSPREVIOUS,AWSPENDING"
+    required: false
+  dry-run:
+    description: "If true, only log what would happen"
+    default: "false"
+    required: false
+
+outputs:
+  trimmed:
+    description: "true if a stage was deprecated (removed), else false"
