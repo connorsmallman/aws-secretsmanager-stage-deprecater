@@ -1,4 +1,4 @@
-name: "Deprecate Secrets Manager staging labels"
+name: "Deprecate Secrets Manager Staging Labels"
 description: "If a secret has > N staging labels, deprecate the oldest-labeled one"
 author: "Connor Smallman"
 runs:
