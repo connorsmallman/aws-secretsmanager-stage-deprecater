@@ -3,7 +3,7 @@ description: "If a secret has > N staging labels, deprecate the oldest-labeled o
 author: "Connor Smallman"
 runs:
   using: "node20"
-  main: "index.js"
+  main: "dist/index.js"
 
 inputs:
   secret-id:

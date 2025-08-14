@@ -9,11 +9,13 @@
     "@aws-sdk/client-secrets-manager": "^3.637.0"
   },
   "scripts": {
+    "build": "ncc build index.js -o dist",
     "test": "node --test",
     "lint": "eslint . --ext .js"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@vercel/ncc": "^0.38.3",
     "eslint": "^9.33.0",
     "globals": "^16.3.0"
   }
